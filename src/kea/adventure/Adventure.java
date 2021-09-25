@@ -37,6 +37,7 @@ public class Adventure {
 
         //Intro and description of start room
         System.out.println("\nWelcome to this text based Adventure.");
+        System.out.println("Find the treasure or fail trying. How will it end");
 
         //Get inputs until user types exit or x
         String menuOption = "Z";
@@ -54,7 +55,7 @@ public class Adventure {
                 case "GO EAST", "EAST", "E" -> requestedRoom = currentRoom.getEastRoom();
                 case "GO SOUTH", "SOUTH", "S" -> requestedRoom = currentRoom.getSouthRoom();
                 case "GO WEST", "WEST", "W" -> requestedRoom = currentRoom.getWestRoom();
-                case "EXPLORE", "LOOK", "L" -> System.out.print("\nLooking. ");
+                case "EXPLORE", "LOOK", "L" -> menuOption=lookAround(currentRoom, room5);
                 case "HELP", "H" -> getHelp();
                 case "EXIT", "X" -> endMessage();
                 default -> unknownCommand(menuOption);
@@ -87,5 +88,16 @@ public class Adventure {
     //Invalid input
     public static void unknownCommand(String menuOption) {
         System.out.println("I do not understand \"" + menuOption + "\".");
+    }
+
+    //Easter egg
+    public static String lookAround(Room currentRoom, Room room5) {
+        if (currentRoom == room5) {
+            System.out.println("\nCongratulations, you found the beer!");
+            return "X";
+        } else {
+            System.out.print("\nLooking. ");
+            return "L";
+        }
     }
 }
