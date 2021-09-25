@@ -20,27 +20,18 @@ public class Adventure {
         Room room9 = new Room("Room9", "No beer here");
 
         Room currentRoom = room1;
-        Room requestedRoom = null;
+        Room requestedRoom;
 
-        //Make connections - not auto 2 way and not with map - todo?
-        room1.setEast(room2);
-        room2.setWest(room1);
-        room2.setEast(room3);
-        room3.setWest(room2);
-        room3.setSouth(room6);
-        room6.setNorth(room3);
-        room6.setSouth(room9);
-        room9.setNorth(room6);
-        room9.setWest(room8);
-        room8.setEast(room9);
-        room8.setNorth(room5);
-        room5.setSouth(room8);
-        room8.setWest(room7);
-        room7.setEast(room8);
-        room7.setNorth(room4);
-        room4.setSouth(room7);
-        room4.setNorth(room1);
-        room1.setSouth(room4);
+        //Make connections - auto 2 way but not with map - todo?
+        room1.connectSouthNorth(room4);
+        room1.connectEastWest(room2);
+        room2.connectEastWest(room3);
+        room3.connectSouthNorth(room6);
+        room6.connectSouthNorth(room9);
+        room8.connectEastWest(room9);
+        room7.connectEastWest(room8);
+        room5.connectSouthNorth(room8);
+        room4.connectSouthNorth(room7);
 
         Scanner input = new Scanner(System.in);
 
@@ -49,7 +40,7 @@ public class Adventure {
 
         //Get inputs until user types exit or x
         String menuOption = "Z";
-        ;
+
         while (!menuOption.equals("X") && !menuOption.equals("EXIT")) {
             requestedRoom = currentRoom; //used to only print blocked if user tries a blocked route
             System.out.print(currentRoom.getRoomName() + ": ");
