@@ -9,15 +9,15 @@ public class Adventure {
         //Initialise rooms
 
         //create all instances of room objects - probably should be an array - data very basic
-        Room room1 = new Room("Room1", "Looks like an entrance.");
-        Room room2 = new Room("Room2", "Not much to see.");
-        Room room3 = new Room("Room3", "The way straight seems blocked");
-        Room room4 = new Room("Room4", "Looks empty");
-        Room room5 = new Room("Room5", "This room looks special.");
-        Room room6 = new Room("Room6", "You see nothing interesting");
-        Room room7 = new Room("Room7", "What is here?...Oh, nothing.");
-        Room room8 = new Room("Room8", "Seems to be several exits");
-        Room room9 = new Room("Room9", "No beer here");
+        Room room1 = new Room("Room 1", "Looks like an entrance.");
+        Room room2 = new Room("Room 2", "Not much to see.");
+        Room room3 = new Room("Room 3", "The way straight seems blocked");
+        Room room4 = new Room("Room 4", "Looks empty");
+        Room room5 = new Room("Room 5", "This room looks special.");
+        Room room6 = new Room("Room 6", "You see nothing interesting");
+        Room room7 = new Room("Room7 ", "What is here?...Oh, nothing.");
+        Room room8 = new Room("Room 8", "Seems to be several exits");
+        Room room9 = new Room("Room 9", "No beer here");
 
         Room currentRoom = room1;
         Room requestedRoom;
