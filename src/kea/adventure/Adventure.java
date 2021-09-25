@@ -15,7 +15,7 @@ public class Adventure {
         Room room4 = new Room("Room 4", "Looks empty");
         Room room5 = new Room("Room 5", "This room looks special.");
         Room room6 = new Room("Room 6", "You see nothing interesting");
-        Room room7 = new Room("Room7 ", "What is here?...Oh, nothing.");
+        Room room7 = new Room("Room 7 ", "What is here?...Oh, nothing.");
         Room room8 = new Room("Room 8", "Seems to be several exits");
         Room room9 = new Room("Room 9", "No beer here");
 
@@ -48,7 +48,7 @@ public class Adventure {
             System.out.print("What do you want to do? ");
             menuOption = input.nextLine().toUpperCase();
 
-            //construction is very messy but works. Improvements needed here. Eliminate static variable?
+            //player choice with multiple command forms
             switch (menuOption) {
                 case "GO NORTH", "NORTH", "N" -> requestedRoom = currentRoom.getNorthRoom();
                 case "GO EAST", "EAST", "E" -> requestedRoom = currentRoom.getEastRoom();
