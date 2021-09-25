@@ -43,7 +43,7 @@ public class Adventure {
 
         while (!menuOption.equals("X") && !menuOption.equals("EXIT")) {
             requestedRoom = currentRoom; //used to only print blocked if user tries a blocked route
-            System.out.print(currentRoom.getRoomName() + ": ");
+            System.out.print("\n" + currentRoom.getRoomName() + ": ");
             System.out.println(currentRoom.getRoomDescription());
             System.out.print("What do you want to do? ");
             menuOption = input.nextLine().toUpperCase();
@@ -54,7 +54,7 @@ public class Adventure {
                 case "GO EAST", "EAST", "E" -> requestedRoom = currentRoom.getEastRoom();
                 case "GO SOUTH", "SOUTH", "S" -> requestedRoom = currentRoom.getSouthRoom();
                 case "GO WEST", "WEST", "W" -> requestedRoom = currentRoom.getWestRoom();
-                case "LOOK", "L" -> System.out.print("OK. ");
+                case "EXPLORE", "LOOK", "L" -> System.out.print("\nLooking. ");
                 case "HELP", "H" -> getHelp();
                 case "EXIT", "X" -> endMessage();
                 default -> unknownCommand(menuOption);
